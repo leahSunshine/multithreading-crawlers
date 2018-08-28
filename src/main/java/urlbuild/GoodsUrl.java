@@ -32,7 +32,7 @@ public class GoodsUrl {
             threads.add(thread);
             thread.start();
         }
-
+        //这里为什么要加上 thread.join();等待所有的线程执行完毕？？？？？不是太明白
         for (Thread thread : threads) {
             try {
                 thread.join();

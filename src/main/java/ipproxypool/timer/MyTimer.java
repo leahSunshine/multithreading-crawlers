@@ -20,4 +20,7 @@ public class MyTimer {
         // 设置定时任务，从现在开始，每24小时执行一次
         timer.schedule(job, date, 24*60*60*1000);
     }
+    public static void main(String[] args) {
+    	MyTimer.startIPProxyPool(new Object());
+	}
 }
