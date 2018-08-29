@@ -74,5 +74,31 @@ public class IPMessage implements Serializable {
                 ", useCount='" + useCount + '\'' +
                 '}';
     }
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((IPAddress == null) ? 0 : IPAddress.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		IPMessage other = (IPMessage) obj;
+		if (IPAddress == null) {
+			if (other.IPAddress != null)
+				return false;
+		} else if (!IPAddress.equals(other.IPAddress))
+			return false;
+		return true;
+	}
+    
 }
 
