@@ -1,6 +1,10 @@
 package utilclass;
 
+import java.util.ArrayList;
 import java.util.BitSet;
+import java.util.List;
+
+import parse.CommoditySearchPage;
 
 /**
  * @Author: spider_hgyi
@@ -50,4 +54,31 @@ public class BloomFilter {
             bits.set(fingerprint);
         }
     }
+    //BloomFilter的使用
+    public static void main(String[] args) {
+    	 List<String> older = new ArrayList<String>();
+    	 older.add("1");
+    	 older.add("2");
+    	 older.add("1");
+    	 older.add("4");
+    	 older.add("3");
+    	 older.add("3");
+    	 older.add("5");
+         List<String> newly = new ArrayList<>();
+         BloomFilter bloomFilter=new BloomFilter();
+         // 使用布隆过滤器对得到的商品id进行判重
+         for (String o : older) {
+             int[] fingerprints = bloomFilter.getFingerprint(o);
+             boolean exist = bloomFilter.isExist(fingerprints);
+
+             if (!exist) {
+                 bloomFilter.saveFingerprints(fingerprints);
+             } else {
+                 continue;
+             }
+
+             newly.add(o);
+         }
+         System.out.println(newly.size());
+	}
 }

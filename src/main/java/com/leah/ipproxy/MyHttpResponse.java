@@ -30,7 +30,7 @@ public class MyHttpResponse {
         httpGet.setHeader("Accept-Language", "zh-CN,zh;q=0.8");
         httpGet.setHeader("Cache-Control", "no-cache");
         httpGet.setHeader("Connection", "keep-alive");
-        httpGet.setHeader("Host", "www.xicidaili.com");
+//        httpGet.setHeader("Host", "www.xicidaili.com");
         httpGet.setHeader("Pragma", "no-cache");
         httpGet.setHeader("Upgrade-Insecure-Requests", "1");
         httpGet.setHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 " +
@@ -83,7 +83,7 @@ public class MyHttpResponse {
         httpGet.setHeader("Accept-Language", "zh-CN,zh;q=0.8");
         httpGet.setHeader("Cache-Control", "no-cache");
         httpGet.setHeader("Connection", "keep-alive");
-        httpGet.setHeader("Host", "www.xicidaili.com");
+//        httpGet.setHeader("Host", "www.xicidaili.com");
         httpGet.setHeader("Pragma", "no-cache");
         httpGet.setHeader("Upgrade-Insecure-Requests", "1");
         httpGet.setHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 " +

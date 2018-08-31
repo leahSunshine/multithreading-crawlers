@@ -1,5 +1,6 @@
 package com.leah.ipproxy;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -10,6 +11,7 @@ import org.jsoup.select.Elements;
 
 public class MainTest {
 	public static void main(String[] args) {
+		System.out.println(new Date());
 		Queue<String> urls = new LinkedList<>();
 		  for (int i = 1; i <= 21; i++) {
             urls.offer("http://www.xicidaili.com/nn/" + i);
@@ -40,5 +42,6 @@ public class MainTest {
 				 return newIPMessages;
 			}
 		}, urls, 24*60*60);
+		System.out.println(new Date());
 	}
 }

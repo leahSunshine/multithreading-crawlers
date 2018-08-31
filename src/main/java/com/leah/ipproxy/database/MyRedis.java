@@ -2,6 +2,7 @@ package com.leah.ipproxy.database;
 
 import utilclass.SerializeUtil;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Pipeline;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,14 +38,16 @@ public class MyRedis {
 
     // 将多个ip信息保存在Redis列表中
     public void setIPToList(List<IPMessage> ipMessages) {
+    	 Pipeline pipelined = jedis.pipelined();
+    	 System.out.println("start insert");
         for (IPMessage ipMessage : ipMessages) {
             // 首先将ipMessage进行序列化
             byte[] bytes = SerializeUtil.serialize(ipMessage);
-
-            readWriteLock.writeLock().lock();
-            jedis.rpush("ip-proxy-pool".getBytes(), bytes);
-            readWriteLock.writeLock().unlock();
+//            readWriteLock.writeLock().lock();
+            pipelined.rpush("ip-proxy-pool".getBytes(), bytes);
+//            readWriteLock.writeLock().unlock();
         }
+        System.out.println("end insert");
     }
     // 将多个ip信息保存在Redis列表中
     public List<IPMessage> getIpsToList() {
