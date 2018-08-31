@@ -30,8 +30,8 @@
                     </archive>
                     <excludes>
 			            <!--注意这玩意从编译结果目录开始算目录结构-->
-			            <exclude>/*.properties</exclude>
-			            <exclude>/*.xml</exclude>
+			            <exclude>*.properties</exclude>
+			            <exclude>*.xml</exclude>
 			        </excludes>
                 </configuration>
                 
@@ -50,7 +50,6 @@
                             <outputDirectory>${project.build.directory}/lib</outputDirectory>
                         </configuration>
                     </execution>
-                    
                 </executions>
             </plugin>
         </plugins>
