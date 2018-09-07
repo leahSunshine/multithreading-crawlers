@@ -140,7 +140,7 @@ public class UrlParseDongao {
 			 return null;
 		 }
 		 Elements title = document.select("head").select("title");
-		 if(title!=null && m.getTestType()==null) {
+		 if(title!=null && m.getContentType()==null) {
 			 String titleCon=title.text();
 			 int posi=titleCon.indexOf("：");
 			String part= titleCon.substring(titleCon.indexOf(" ")+1,posi);
